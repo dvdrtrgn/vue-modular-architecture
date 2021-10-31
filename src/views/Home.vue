@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
-    <h1>
-      Home Page
-    </h1>
+  <section class="home">
+    <pre class="note">views/Home</pre>
+
+    <h1>Home Page</h1>
 
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aliquid
@@ -10,7 +10,7 @@
       Molestias exercitationem quod ut aspernatur nostrum debitis molestiae
       ipsam, dolores assumenda alias quidem.
     </p>
-  </div>
+  </section>
 </template>
 
 <script>

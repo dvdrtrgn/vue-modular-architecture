@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <h1 class="mb-3">Products (home)</h1>
+  <section>
+    <pre class="note">products/views/Home</pre>
+
+    <h1 class="mb-3">Products</h1>
 
     <div v-if="isLoading">
       <img size="64" src="/progress.svg" />
@@ -34,7 +36,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <section>
+    <pre class="note">products/Module</pre>
+
     <router-view />
-  </div>
+  </section>
 </template>
 
 <script>

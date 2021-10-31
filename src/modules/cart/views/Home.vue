@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <h1 class="mb-3">Cart (home)</h1>
+  <section>
+    <pre class="note">cart/views/Home</pre>
+
+    <h1 class="mb-3">Cart</h1>
 
     <div v-if="isCartEmpty">
       No items in the cart.
@@ -39,7 +41,7 @@
         Total: $ {{ totalPrice }}
       </div>
     </template>
-  </div>
+  </section>
 </template>
 
 <script>
