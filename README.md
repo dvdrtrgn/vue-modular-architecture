@@ -1,5 +1,7 @@
 # vue-modular-architecture
 
+https://github.com/DarkC0der11/vue-modular-architecture.git
+
 ## Project setup
 ```
 npm install
