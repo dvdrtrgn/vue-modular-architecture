@@ -7,35 +7,33 @@
     </div>
 
     <template v-else>
-      <v-list>
-        <v-list-item v-for="item in items" :key="item.id">
-          <v-list-item-avatar>
-            <v-img src="/widget.png" />
-          </v-list-item-avatar>
+      <div>
+        <div v-for="item in items" :key="item.id">
+          <div>
+            <v-img src="/widget.png" width="100" />
+          </div>
 
-          <v-list-item-content>
-            <v-list-item-title>
+          <div>
+            <div>
               {{ item.title }}
-            </v-list-item-title>
+            </div>
 
-            <v-list-item-subtitle class="green--text">
-              $ {{ item.price }}
-            </v-list-item-subtitle>
-          </v-list-item-content>
+            <div class="green--text">$ {{ item.price }}</div>
+          </div>
 
-          <v-list-item-action>
-            <v-btn
+          <div>
+            <button
               @click="$store.commit('cart/REMOVE_ITEM', item.id)"
               color="red"
               class="white--text"
             >
               Remove
-            </v-btn>
-          </v-list-item-action>
-        </v-list-item>
-      </v-list>
+            </button>
+          </div>
+        </div>
+      </div>
 
-      <v-divider />
+      <hr />
 
       <div class="mt-3 green--text text-center text-h6">
         Total: $ {{ totalPrice }}

@@ -2,46 +2,38 @@
   <div>
     <h1 class="mb-3">Products (home)</h1>
 
-    <v-row v-if="isLoading" justify="center" no-gutters class="my-12">
-      <v-progress-circular indeterminate color="primary" size="64" />
-    </v-row>
+    <div v-if="isLoading">
+      <img size="64" src="/progress.svg" />
+    </div>
 
-    <v-row v-else-if="products.length">
-      <v-col cols="4" v-for="product in products" :key="product.id">
-        <v-card>
-          <v-img height="250" src="/widget.png" />
+    <div v-else-if="products.length">
+      <div cols="4" v-for="product in products" :key="product.id">
+        <div>
+          <img height="250" src="/widget.png" />
 
-          <v-card-title class="green--text pb-0">
-            ${{ product.price }}
-          </v-card-title>
+          <p class="green--text pb-0">${{ product.price }}</p>
+          <p>{{ product.title }}</p>
 
-          <v-card-title>
-            {{ product.title }}
-          </v-card-title>
+          <div>
+            <br />
 
-          <v-card-actions>
-            <v-spacer />
+            <router-link :to="`/products/${product.id}`">View</router-link>
 
-            <v-btn :to="`/products/${product.id}`" depressed>
-              View
-            </v-btn>
-
-            <v-btn
+            <button
               v-if="checkIsInCart(product)"
               class="white--text"
               color="red"
               @click="$store.commit('cart/REMOVE_ITEM', product.id)"
             >
               Remove from cart
-            </v-btn>
-
-            <v-btn v-else color="primary" @click="addToCart(product)">
+            </button>
+            <button v-else color="primary" @click="addToCart(product)">
               Add to Cart
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -7,7 +7,7 @@ import cartModule from "./modules/cart";
 import productsModule from "./modules/products";
 
 import { registerModules } from "./register-modules";
-import vuetify from "./plugins/vuetify";
+// import vuetify from "./plugins/vuetify";
 
 registerModules({
   products: productsModule,
@@ -19,6 +19,6 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  vuetify,
+  // vuetify,
   render: h => h(App)
 }).$mount("#app");

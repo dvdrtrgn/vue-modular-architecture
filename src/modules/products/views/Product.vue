@@ -1,37 +1,36 @@
 <template>
   <div>
     (product)
-    <v-row v-if="isLoading" justify="center" no-gutters class="my-12">
-      <v-progress-circular indeterminate color="primary" size="64" />
-    </v-row>
+    <div v-if="isLoading">
+      <img size="64" src="/progress.svg" />
+    </div>
 
     <template v-else-if="product">
-      <v-row>
-        <v-col cols="4">
-          <v-img height="auto" src="/widget.png" width="50%" />
-        </v-col>
+      <div>
+        <div cols="4">
+          <img height="auto" src="/widget.png" width="50%" />
+        </div>
 
-        <v-col cols="8">
-          <div class="green--text pb-0 text-h6">${{ product.price }}</div>
+        <div cols="8">
+          <div>${{ product.price }}</div>
 
-          <h1 class="mb-3">
+          <h1>
             {{ product.title }}
           </h1>
 
-          <v-btn
+          <button
             v-if="checkIsInCart(product)"
             class="white--text"
             color="red"
             @click="$store.commit('cart/REMOVE_ITEM', product.id)"
           >
             Remove from cart
-          </v-btn>
-
-          <v-btn v-else color="primary" @click="addToCart(product)">
+          </button>
+          <button v-else color="primary" @click="addToCart(product)">
             Add to Cart
-          </v-btn>
-        </v-col>
-      </v-row>
+          </button>
+        </div>
+      </div>
     </template>
   </div>
 </template>
