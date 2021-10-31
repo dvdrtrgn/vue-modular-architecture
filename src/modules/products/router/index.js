@@ -1,6 +1,6 @@
-const Module = () => import("./Module.vue");
-const Home = () => import("./views/Home.vue");
-const Product = () => import("./views/Product.vue");
+const Module = () => import("../Module.vue");
+const Home = () => import("../views/Home.vue");
+const Product = () => import("../views/Product.vue");
 
 const moduleRoute = {
   path: "/products",

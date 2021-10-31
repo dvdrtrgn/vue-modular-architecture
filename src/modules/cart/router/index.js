@@ -1,5 +1,5 @@
-const Module = () => import("./Module.vue");
-const Home = () => import("./views/Home.vue");
+const Module = () => import("../Module.vue");
+const Home = () => import("../views/Home.vue");
 
 const moduleRoute = {
   path: "/cart",
