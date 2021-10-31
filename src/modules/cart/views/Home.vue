@@ -12,7 +12,7 @@
       <div>
         <div v-for="item in items" :key="item.id">
           <div>
-            <v-img src="/widget.png" width="100" />
+            <img src="/widget.png" width="100" />
           </div>
 
           <div>

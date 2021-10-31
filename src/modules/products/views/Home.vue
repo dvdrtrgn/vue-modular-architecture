@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import { getProducts } from "../../../store/api.js";
 
 export default {
   name: "Home",
@@ -60,7 +60,7 @@ export default {
     this.isLoading = true;
 
     try {
-      const { data } = await axios.get("https://fakestoreapi.com/products");
+      const { data } = await getProducts();
       this.products = data;
     } finally {
       this.isLoading = false;

@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import { getProduct } from "../../../store/api.js";
 
 export default {
   name: "Product",
@@ -57,9 +57,7 @@ export default {
     this.isLoading = true;
 
     try {
-      const { data } = await axios.get(
-        `https://fakestoreapi.com/products/${this.$route.params.id}`
-      );
+      const { data } = await getProduct(this.$route.params.id);
       this.product = data;
     } finally {
       this.isLoading = false;
