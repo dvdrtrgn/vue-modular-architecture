@@ -1,4 +1,4 @@
-import * as types from "./mutation-types";
+import * as types from './mutation-types';
 
 export default {
   [types.ADD_ITEM](state, item) {
@@ -6,6 +6,6 @@ export default {
   },
 
   [types.REMOVE_ITEM](state, id) {
-    state.items = state.items.filter(item => item.id !== id);
-  }
+    state.items = state.items.filter((item) => item.id !== id);
+  },
 };

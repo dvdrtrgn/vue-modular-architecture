@@ -40,41 +40,41 @@
 </template>
 
 <script>
-import { getProducts } from "../../../store/api.js";
+  import { getProducts } from '../../../store/api.js';
 
-export default {
-  name: "Home",
+  export default {
+    name: 'Home',
 
-  data: () => ({
-    products: [],
-    isLoading: false
-  }),
+    data: () => ({
+      products: [],
+      isLoading: false,
+    }),
 
-  computed: {
-    cartItems() {
-      return this.$store.state.cart.items;
-    }
-  },
-
-  async created() {
-    this.isLoading = true;
-
-    try {
-      const { data } = await getProducts();
-      this.products = data;
-    } finally {
-      this.isLoading = false;
-    }
-  },
-
-  methods: {
-    checkIsInCart(product) {
-      return this.cartItems.some(cartItem => cartItem.id === product.id);
+    computed: {
+      cartItems() {
+        return this.$store.state.cart.items;
+      },
     },
 
-    addToCart(product) {
-      this.$store.commit("cart/ADD_ITEM", product);
-    }
-  }
-};
+    async created() {
+      this.isLoading = true;
+
+      try {
+        const { data } = await getProducts();
+        this.products = data;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    methods: {
+      checkIsInCart(product) {
+        return this.cartItems.some((cartItem) => cartItem.id === product.id);
+      },
+
+      addToCart(product) {
+        this.$store.commit('cart/ADD_ITEM', product);
+      },
+    },
+  };
 </script>

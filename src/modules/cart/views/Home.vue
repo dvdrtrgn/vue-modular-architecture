@@ -45,22 +45,25 @@
 </template>
 
 <script>
-export default {
-  name: "Cart",
+  export default {
+    name: 'Cart',
 
-  computed: {
-    items() {
-      return this.$store.state.cart.items || [];
+    computed: {
+      items() {
+        return this.$store.state.cart.items || [];
+      },
+
+      isCartEmpty() {
+        return this.items.length === 0;
+      },
+
+      totalPrice() {
+        const price = this.items.reduce(
+          (acc, product) => acc + product.price,
+          0
+        );
+        return price.toFixed(2);
+      },
     },
-
-    isCartEmpty() {
-      return this.items.length === 0;
-    },
-
-    totalPrice() {
-      const price = this.items.reduce((acc, product) => acc + product.price, 0);
-      return price.toFixed(2);
-    }
-  }
-};
+  };
 </script>

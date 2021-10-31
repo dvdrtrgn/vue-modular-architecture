@@ -15,14 +15,14 @@
 </template>
 
 <style>
-section {
-  position: relative;
-  padding-top: 1em;
-}
-.note {
-  color: steelblue;
-  font-style: italic;
-  position: absolute;
-  right: 0;
-}
+  section {
+    position: relative;
+    padding-top: 1em;
+  }
+  .note {
+    color: steelblue;
+    font-style: italic;
+    position: absolute;
+    right: 0;
+  }
 </style>

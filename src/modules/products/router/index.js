@@ -1,23 +1,23 @@
-const Module = () => import("../Module.vue");
-const Home = () => import("../views/Home.vue");
-const Product = () => import("../views/Product.vue");
+const Module = () => import('../Module.vue');
+const Home = () => import('../views/Home.vue');
+const Product = () => import('../views/Product.vue');
 
 const moduleRoute = {
-  path: "/products",
+  path: '/products',
   component: Module,
   children: [
     {
-      path: "/",
-      component: Home
+      path: '/',
+      component: Home,
     },
 
     {
-      path: ":id",
-      component: Product
-    }
-  ]
+      path: ':id',
+      component: Product,
+    },
+  ],
 };
 
-export default router => {
+export default (router) => {
   router.addRoutes([moduleRoute]);
 };

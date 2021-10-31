@@ -1,7 +1,7 @@
-import store from "./store";
-import router from "./router";
+import store from './store';
+import router from './router';
 
 export default {
   store,
-  router
+  router,
 };
