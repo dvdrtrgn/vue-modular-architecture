@@ -8,7 +8,7 @@
     <template v-else-if="product">
       <v-row>
         <v-col cols="4">
-          <v-img height="auto" :src="product.image" width="50%" />
+          <v-img height="auto" src="/widget.png" width="50%" />
         </v-col>
 
         <v-col cols="8">

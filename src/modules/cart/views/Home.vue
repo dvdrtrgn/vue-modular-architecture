@@ -10,7 +10,7 @@
       <v-list>
         <v-list-item v-for="item in items" :key="item.id">
           <v-list-item-avatar>
-            <v-img :src="item.image" />
+            <v-img src="/widget.png" />
           </v-list-item-avatar>
 
           <v-list-item-content>

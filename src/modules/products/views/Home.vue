@@ -9,7 +9,7 @@
     <v-row v-else-if="products.length">
       <v-col cols="4" v-for="product in products" :key="product.id">
         <v-card>
-          <v-img height="250" :src="product.image" />
+          <v-img height="250" src="/widget.png" />
 
           <v-card-title class="green--text pb-0">
             ${{ product.price }}
