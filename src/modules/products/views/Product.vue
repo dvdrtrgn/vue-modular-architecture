@@ -3,7 +3,7 @@
     <pre class="note">products/views/Product</pre>
 
     <div v-if="isLoading">
-      <img size="64" src="/progress.svg" />
+      <img height="64" src="/progress.svg" />
     </div>
 
     <template v-else-if="product">

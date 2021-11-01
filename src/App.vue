@@ -16,7 +16,7 @@
   };
 </script>
 
-<style>
+<style lang="scss">
   section {
     position: relative;
     padding-top: 1em;
@@ -26,5 +26,25 @@
     font-style: italic;
     position: absolute;
     right: 0;
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+
+    > [cols] {
+      border: 1px solid silver;
+      padding: 1em;
+    }
+    > [cols='2'] {
+      width: 50%;
+    }
+    > [cols='3'] {
+      width: 33%;
+    }
+    > [cols='4'] {
+      width: 25%;
+    }
   }
 </style>

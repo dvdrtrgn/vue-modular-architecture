@@ -5,20 +5,20 @@
     <h1 class="mb-3">Products</h1>
 
     <div v-if="isLoading">
-      <img size="64" src="/progress.svg" />
+      <img height="64" src="/progress.svg" />
     </div>
 
-    <div v-else-if="products.length">
+    <div class="flex" v-else-if="products.length">
       <div cols="4" v-for="product in products" :key="product.id">
         <div>
           <img height="250" src="/widget.png" />
 
-          <p class="green--text pb-0">${{ product.price }}</p>
-          <p>{{ product.title }}</p>
+          <div class="flex">
+            <p class="green--text pb-0">${{ product.price }}</p>
+            <p>{{ product.title }}</p>
+          </div>
 
-          <div>
-            <br />
-
+          <div class="flex">
             <router-link :to="`/products/${product.id}`">View</router-link>
 
             <button
