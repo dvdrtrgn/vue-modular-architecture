@@ -2,17 +2,19 @@
   <section>
     <pre class="note">App</pre>
 
-    <div>
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/products">Products</router-link>
-      |
-      <router-link to="/cart">Cart</router-link>
-    </div>
+    <TopNav></TopNav>
 
     <router-view />
   </section>
 </template>
+
+<script>
+  import TopNav from './components/TopNav.vue';
+
+  export default {
+    components: { TopNav },
+  };
+</script>
 
 <style>
   section {
