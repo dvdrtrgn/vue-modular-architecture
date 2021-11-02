@@ -1,35 +1,40 @@
 <template>
   <section>
-    <pre class="note">products/views/Home</pre>
-
     <h1 class="mb-3">Products</h1>
 
     <div v-if="isLoading">
-      <img height="64" src="/progress.svg" />
+      <img src="/progress.svg" />
     </div>
 
     <div class="flex" v-else-if="products.length">
-      <div cols="4" v-for="product in products" :key="product.id">
-        <div>
-          <img height="250" src="/widget.png" />
+      <div cols v-for="product in products" :key="product.id">
+        <div class="stack p1">
+          <img src="/widget.png" />
 
           <div class="flex">
             <p class="green--text pb-0">${{ product.price }}</p>
             <p>{{ product.title }}</p>
           </div>
 
-          <div class="flex">
-            <router-link :to="`/products/${product.id}`">View</router-link>
+          <div class="flex btns">
+            <router-link class="btn" :to="`/products/${product.id}`"
+              >View</router-link
+            >
 
             <button
               v-if="checkIsInCart(product)"
-              class="white--text"
+              class="btn white--text"
               color="red"
               @click="$store.commit('cart/REMOVE_ITEM', product.id)"
             >
               Remove from cart
             </button>
-            <button v-else color="primary" @click="addToCart(product)">
+            <button
+              v-else
+              class="btn"
+              color="primary"
+              @click="addToCart(product)"
+            >
               Add to Cart
             </button>
           </div>

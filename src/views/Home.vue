@@ -1,7 +1,5 @@
 <template>
   <section class="home">
-    <pre class="note">views/Home</pre>
-
     <h1>Home Page</h1>
 
     <p>
@@ -18,3 +16,5 @@
     name: 'Home',
   };
 </script>
+
+<style></style>

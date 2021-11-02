@@ -1,7 +1,5 @@
 <template>
   <section>
-    <pre class="note">cart/views/Home</pre>
-
     <h1 class="mb-3">Cart</h1>
 
     <div v-if="isCartEmpty">
@@ -27,7 +25,7 @@
             <button
               @click="$store.commit('cart/REMOVE_ITEM', item.id)"
               color="red"
-              class="white--text"
+              class="btn white--text"
             >
               Remove
             </button>

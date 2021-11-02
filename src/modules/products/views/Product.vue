@@ -1,12 +1,8 @@
 <template>
   <section>
-    <pre class="note">products/views/Product</pre>
+    <ProgressSpinner v-show="isLoading"></ProgressSpinner>
 
-    <div v-if="isLoading">
-      <img height="64" src="/progress.svg" />
-    </div>
-
-    <template v-else-if="product">
+    <template v-if="product">
       <div>
         <div cols="4">
           <img height="auto" src="/widget.png" width="50%" />
@@ -21,13 +17,18 @@
 
           <button
             v-if="checkIsInCart(product)"
-            class="white--text"
+            class="btn white--text"
             color="red"
             @click="$store.commit('cart/REMOVE_ITEM', product.id)"
           >
             Remove from cart
           </button>
-          <button v-else color="primary" @click="addToCart(product)">
+          <button
+            v-else
+            class="btn"
+            color="primary"
+            @click="addToCart(product)"
+          >
             Add to Cart
           </button>
         </div>
@@ -37,7 +38,8 @@
 </template>
 
 <script>
-  import { getProduct } from '../../../store/api.js';
+  import { getProduct } from '@/store/api.js';
+  import ProgressSpinner from '@/components/ProgressSpinner.vue';
 
   export default {
     name: 'Product',
@@ -46,6 +48,7 @@
       product: null,
       isLoading: false,
     }),
+    components: { ProgressSpinner },
 
     computed: {
       cartItems() {
@@ -75,3 +78,5 @@
     },
   };
 </script>
+
+<style lang="scss"></style>
